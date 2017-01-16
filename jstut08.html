@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+    <link href="stylesheet" type="text/css" href="jstut.css" />
+  </head>
+  <body>
+  <script>
+  function openAlert(mess){
+    alert(mess);
+  }
+  </script>
+
+  <a href="javascript:void(0)" onclick="alert('Hello');">Say Hello</a></br />
+
+  <a href="javascript:void(0)" onclick="openAlert('Hi, how are you');">Say Something</a></br />
+
+  <!--  mouse event handling  -->
+  <a href="javascript:void(0)" 
+    onmouseover="this.style.color='red';" 
+    onmouseout="this.style.color='blue'" 
+    ondblclick="this.text='You double clicked me'" 
+    onmousedown="this.text='Don\'t press me so hard'" 
+    onmouseup="this.text='Thank you'">Make me Red</a>
+  </br /></br />
+
+  </body>
+</html>

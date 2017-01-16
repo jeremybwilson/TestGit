@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="jstut.css" />
+  </head>
+  <body>
+  <script>
+  function openAlert(mess){
+    alert(mess);
+  }
+  </script>
+
+  <a href="JavaScript:void(0)" onClick="alert('Hello');">Say Hello</a></br />
+
+  <a href="JavaScript:void(0)" onClick="openAlert('Hi, how are you');">Say Something</a></br />
+
+  <a href="JavaScript:void(0)" 
+    onmouseover="this.style.color='red';" 
+    onmouseout="this.style.color='blue'" 
+    ondblclick="this.text='You double clicked me'" 
+    onmousedown="this.text='Don\'t press me so hard'" 
+    onmouseup="this.text='Thank you'">Make me Red</a>
+  </br /></br />
+
+  <input type="text" id="randInput" onChange="var dataEntered=document.getElementById('randInput').value; alert('User Typed ' + dataEntered)" />
+  <form action="#" id="SampForm">
+  <input id="charInput" type="text">
+  <p id="keyData">Key Data Here</p>
+  <input type="submit" value="Submit" />
+  <input type="reset" value="Reset" />
+
+  </form><br />
+
+  <img src="../../gC/mscommon/cm/Holiday/microsoft-logo-holiday.png" id="logo" />
+
+  <button id="logoButton">Get Logo</button>
+
+  <input id="mouseInput" type="text" size="30"><br />
+
+  Mouse X:  <input type="text" id="mouseX"><br />
+  Mouse Y:  <input type="text" id="mouseY"><br />
+
+  <button id="clearInputs">Clear inputs</button>
+
+  <script>
+  function getChar(event){
+    if(event.which === null) {
+      return String.fromCharCode(event.keyCode);
+    } else if (event.which != 0 && event.charCode != 0){
+      return String.fromCharCode(event.which);
+    } else {
+      return null;
+    }
+  }
+
+  document.getElementById('charInput').onkeypress = 
+  function(event) {
+    var char = getChar(event || window.event)
+    if(!char) return false;
+
+    document.getElementById('keyData').innerHTML = char + " was clicked";
+    return true;
+  }
+
+  document.getElementById('charInput').onfocus = function(event) {
+    document.getElementById('keyData').innerHTML = "Input gained focus";
+  }
+  document.getElementById('charInput').onselect = function(event) {
+    document.getElementById('keyData').innerHTML = "Text selected";
+  }
+
+  document.getElementById('logoButton').onclick = function(event) {
+    document.getElementById('logo').className = "show";
+  }
+
+  document.getElementById('logo').onclick = function(event) {
+    document.getElementById('logo').className = "hidden";
+  }
+
+  document.getElementById('logo').onmouseover = function(event) {
+    document.getElementById('logo').src = "..\/..\/gC\/mscommon\/cm/Holiday\/search-button-red.png";
+    document.getElementById('mouseInput').value ="Mouse Over image";
+  }
+
+  document.getElementById('logo').onmouseout = function(event) {
+    document.getElementById('logo').src = "..\/..\/gC\/mscommon\/cm/Holiday\/microsoft-logo-holiday.png";
+    document.getElementById('mouseInput').value ="Mouse Left image";
+  }
+
+  /* document.body.onmousemove = function(e){
+    e = e || window.event;
+
+    var pageX = e.pageX;
+    var pageY = e.pageY;
+
+    if (pageX === undefined) {
+      pageX = e.clientX.document.body.scrollLeft + document.documentElement.scrollLeft;
+      pageY = e.clientY.document.body.scrollTop + document.documentElement.scrollTop;
+    }
+  }
+  */
+  document.getElementById('clearInputs').onclick = function(event){
+    var inputElements = document.getElementsByTagName('input');
+
+    for (var i = 0; i < inputElements.length; i++) {
+      if (inputElements[i].type == "text") {
+        inputElements[i].value = "";
+      }
+    }
+  }
+  </script>
+
+
+  </body>
+</html>

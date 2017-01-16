@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="jstut.css" />
+  </head>
+  <body>
+  <script>
+    function openAlert(mess){
+      alert(mess);
+    }
+  </script>
+  <div id="sampDiv">Lorem ipsum, some gibberish.  Ipsum lorem gypsum flonase lorem.  Lorem ipsum, some gibberish.  Ipsum lorem gypsum flonase lorem.  Lorem ipsum, some gibberish.  Ipsum lorem gypsum flonase lorem.  Lorem ipsum, some gibberish.  Ipsum lorem gypsum flonase lorem.</div>
+
+  <div id="sampDiv2"><p>Lorem ipsum, some gibberish.  <em>Ipsum lorem gypsum flonase lorem.  Lorem ipsum, some gibberish.</em></p> <p>Ipsum lorem gypsum flonase lorem.  Lorem ipsum, some gibberish.  Ipsum lorem gypsum flonase lorem.  Lorem ipsum, some gibberish.  Ipsum lorem gypsum flonase lorem.</p></div>
+
+  <button id="chgBkColor">Background Color</button>
+  <button id="chgBkImg">Background Image</button>
+  <button id="chgBorderStyle">Border Style</button>
+  <button id="chgBorderWidth">Border Width</button>
+  <button id="chgBorderColor">Border Color</button>
+  <br /><br />
+
+  <button id="forwardPage">Forward Page</button><br />
+  <button id="backPage">Back Page</button><br />
+  <button id="reload">Reload Page</button><br />
+
+  <script>
+    document.getElementById('chgBkColor').onclick = function(event) {
+      document.getElementById('sampDiv').style.backgroundColor = "#EFDECD";
+    }
+    document.getElementById('chgBkImg').onclick = function(event) {
+      document.getElementById('sampDiv').style.backgroundImage = "url('images/LTH_Green_Desktop.png')";
+    }
+    document.getElementById('chgBorderStyle').onclick = function(event) {
+      document.getElementById('sampDiv').style.borderStyle = "solid";
+    }
+    document.getElementById('chgBorderWidth').onclick = function(event) {
+      document.getElementById('sampDiv').style.borderWidth = "thick";
+    }
+    document.getElementById('chgBorderColor').onclick = function(event) {
+      document.getElementById('sampDiv').style.borderColor = "blue";
+    }
+
+    document.write("Current URL : ", window.location.href, "<br />");
+    document.write("Current Host : ", window.location.hostname, "<br />");
+    document.write("Current Path : ", window.location.pathname, "<br />");
+
+    document.getElementById('goToGoogle').onclick = function(event) {
+      window.location.href = "http://www.google.com"
+    }
+    document.getElementById('forwardPage').onclick = function(event) {
+      history.forward();
+    }
+    document.getElementById('backPage').onclick = function(event) {
+      history.back();
+    }
+    document.getElementById('reload').onclick = function(event) {
+      window.location.reload(true);
+    }
+
+    var pElements = document.getElementsByTagName('p');
+    pElements[1].style.backgroundColor = "#FAEBD7";
+
+    document.childNodes[1].style.backgroundColor = "#FAEBD7";
+
+    var sampDiv2 = document.getElementById('sampDiv2');
+
+    sampDiv2.childNodes[0].style.backgroundColor = "#F0FFFF;";
+    sampDiv2.childNodes[0].childNodes[1].style.backgroundColor = "#BFAFB2;";
+    document.write("Node Type : ", sampDiv2.childNodes[0].childNodes[0].nodeType, "<br />");
+
+  </script>
+
+  </body>
+</html>

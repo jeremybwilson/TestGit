@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+    <link href="stylesheet" type="text/css" href="jstut.css" />
+  </head>
+  <body>
+  <script>
+  /*  
+  document.write("5 + 4 =", 5 + 4, "<br />");
+  document.write("5 - 4 =", 5 - 4, "<br />");
+  document.write("5 * 4 =", 5 * 4, "<br />");
+  document.write("5 / 4 =", 5 / 4, "<br />");
+  document.write("5 % 4 =", 5 % 4, "<br />");
+  */
+  var randNum = 5;
+
+  document.write("randNum-- = ", randNum--, "<br />");
+  document.write("--randNum = ", --randNum, "<br />");
+  document.write("randNum++ = ", randNum++, "<br />");
+  document.write("++randNum = ", ++randNum, "<br />");
+  document.write("3 + 2 * 5 = ", 3 + 2 * 5, "<br />");
+  document.write("(3 + 2) * 5 = ", (3 + 2) * 5, "<br /><br />");
+  document.write("Math.abs(-8) =", Math.abs(-8), "<br />");
+  document.write("Math.cbrt(1000) =", Math.cbrt(1000), "<br />");
+  document.write("Math.ceil(6.45) = ", Math.ceil(6.45), "<br />");
+  document.write("Math.floor(6.45) = ", Math.floor(6.45), "<br />");
+  document.write("Math.log(10) = ", Math.log(10), "<br />");
+  document.write("Math.log10(10) = ", Math.log10(10), "<br />");
+  document.write("Math.max(10,5) = ", Math.max(10, 5), "<br />");
+  document.write("Math.min(10,5) = ", Math.min(10, 5), "<br />");
+  document.write("Math.pow(4,2) = ", Math.pow(4,2), "<br />");
+  document.write("Math.sqrt(1000) = ", Math.sqrt(1000), "<br /><br />");
+
+  document.write("Converted String : ", Number("3.14"), "<br />");
+  document.write("Converted Int: ", parseInt("5"), "<br />");
+  document.write("Converted Float : ", parseFloat("3.14"), "<br /><br />");
+
+  var randStr = "A long " + "string that " + "goes on and on ";
+  document.write(randStr.replace("and on", "forever") + "<br />");
+  document.write("String Length ", randStr.length + "<br />");
+  document.write("Index for \"goes\" : ", randStr.indexOf("goes"), "<br />");
+  document.write(randStr.slice(19, 23) + "<br />");
+  document.write(randStr.slice(19) + "<br />");
+  document.write(randStr.replace("and on", "forever") + "<br />");
+  document.write("At Index 2 : ", randStr.charAt(2) + "<br /><br />");
+
+  var randStrArray = randStr.split("");
+
+  randStr = randStr.trim();
+
+  document.write(randStr.toUpperCase() + "<br />");
+  document.write(randStr.toLowerCase() + "<br />");
+
+  </script>
+  </body>
+</html>
